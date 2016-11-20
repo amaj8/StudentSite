@@ -5,13 +5,40 @@
 {% endblock %}
 {% block body %}
     {%if all_students%}
+        <div class="container-fluid-md-offset-2" style="margin-left:10px">
+            <h4>Click on the icons next to the table headers to sort according to the attribute</h4>
+        </div>
         <div class="container-fluid col-md-offset-1">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Enrollment Number</th>
-                        <th>Name</th>
-                        <th>Aggregate</th>
+                        <th> Enrollment Number
+                            <a href="?order_by=roll_num">
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </a>
+                            <a href="?order_by=-roll_num">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            </a>
+
+                        </th>
+                        <th> Name
+                            <a href="?order_by=name">
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </a>
+                            <a href="?order_by=-name">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            </a>
+
+                        </th>
+                        <th>Aggregate
+                            <a href="?order_by=aggregate">
+                                <span class="glyphicon glyphicon-chevron-up"></span>
+                            </a>
+                            <a href="?order_by=-aggregate">
+                                <span class="glyphicon glyphicon-chevron-down"></span>
+                            </a>
+
+                        </th>
                     </tr>
                 </thead>
                 <tbody>

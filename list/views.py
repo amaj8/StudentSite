@@ -3,7 +3,8 @@ from .models import Student
 # Create your views here.
 def RecordView(request):
     template_name='list/record.html'
-    all_students = Student.objects.all().order_by('roll_num')
+    order_list = request.GET.get('order_by','roll_num')
+    all_students = Student.objects.all().order_by(order_list)
     context={'all_students':all_students}
     return render(request,template_name,context)
 
