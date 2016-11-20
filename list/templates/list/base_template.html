@@ -16,6 +16,10 @@
         <div class="navbar-header">
             <a href="{% url 'list:home' %}" class="navbar-brand">Home</a>
         </div>
+        <div class="pull-right">
+            <a href="{% url 'list:about'%}">About </a>
+            <a href="{% url 'list:contact' %}">Contact Us</a>
+        </div>
     </nav>
     {% block body %}
     {% endblock %}

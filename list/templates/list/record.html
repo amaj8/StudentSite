@@ -1,4 +1,5 @@
 {% extends 'list/base_template.html' %}
+{% load set_var %}
 {% block title %}
     Student Database
 {% endblock %}
@@ -14,28 +15,21 @@
                     </tr>
                 </thead>
                 <tbody>
+
                     {% for stud in all_students %}
                         {% if stud.aggregate <= 30 %}
-                            {% with tr_class="danger"%}
-                                <tr class=tr_class>
-                            {% endwith %}
+                            {% set tr_class = "danger" %}
                         {% elif stud.aggregate <= 60 %}
-                            {% with tr_class="active"%}
-                                    <tr class=tr_class>
-                            {% endwith %}
+                            {% set tr_class = "warning" %}
                         {% elif stud.aggregate <= 100 %}
-                            {% with tr_class="success"%}
-                                <tr class=tr_class>
-                            {% endwith %}
+                            {% set tr_class = "success" %}
+                        {% endif %}
+                        <tr class={{tr_class}}>
+                        <td>{{stud.roll_num}}</td>
+                        <td>{{stud.name}}</td>
+                        <td>{{stud.aggregate}}</td>
+                        </tr>
 
-                                <!--<tr class=tr_class>-->
-                                    <td>{{stud.roll_num}}</td>
-                                    <td>{{stud.name}}</td>
-                                    <td>{{stud.aggregate}}</td>
-                                </tr>
-
-
-                       <!-- {% endif %}-->
                     {% endfor %}
                 </tbody>
             </table>

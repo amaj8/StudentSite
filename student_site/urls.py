@@ -20,5 +20,5 @@ app_name='student_site'
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^list/', include('list.urls',namespace='list'),name='list'),
+    url(r'^', include('list.urls')),
 ]
